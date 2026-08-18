@@ -1028,7 +1028,7 @@
 
     /* Services */
     .services-grid{grid-template-columns:1fr 1fr;}
-    .filter-tabs{justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:4px; scrollbar-width:none;}
+    .filter-tabs{justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:4px; padding-left:16px; padding-right:16px; scrollbar-width:none; margin:0 -16px;}
     .filter-tabs::-webkit-scrollbar{display:none;}
     .filter-tab{flex-shrink:0;}
 
