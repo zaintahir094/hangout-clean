@@ -887,10 +887,35 @@
     .trust-divider{ display:none; }
     .trust-pill{ flex: 1 1 45%; }
     .nav-links{display:none;}
+  /* ============================================================
+     RESPONSIVE — 900px (tablet)
+     ============================================================ */
+  @media (max-width:900px){
+    .faq-layout{grid-template-columns:1fr;}
+    .faq-left{position:static;}
+    .faq-illustration{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-banner-img{max-height:340px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr; gap:22px;}
+    .location-grid{grid-template-columns:1fr;}
+    .process-steps{grid-template-columns:repeat(2,1fr); row-gap:44px;}
+    .ps-curve{display:none;}
+    .trust-strip{flex-wrap:wrap;}
+    .trust-divider{display:none;}
+    .nav-links{display:none;}
     .hamburger{display:flex;}
     .calc-grid{grid-template-columns:1fr;}
     .calc-result{position:static;}
+    .reviews-header{flex-direction:column; align-items:flex-start;}
+    .reviews-rating-summary{width:100%;}
+    .section-head h2{font-size:36px;}
+    .process .section-head h2{font-size:36px;}
   }
+
+  /* ============================================================
+     RESPONSIVE — 760px (large mobile)
+     ============================================================ */
   @media (max-width:760px){
     body{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
     .mobile-tabbar{display:block;}
@@ -898,22 +923,117 @@
     .testi-arrows{display:none;}
     .dots{display:flex;}
     .swipe-hint{display:flex;}
-    /* Gallery becomes a swipeable strip instead of a stacked column */
+
+    /* Hero */
+    .hero{padding:var(--space-m) 0 var(--space-s);}
+    .hero h1{font-size:clamp(1.9rem,7vw,2.6rem);}
+    .hero p.lead{font-size:15px;}
+    .hero-ctas{flex-direction:column; align-items:stretch;}
+    .hero-ctas .btn{text-align:center; justify-content:center; width:100%;}
+    .hero-img-shell{display:none;}
+
+    /* Header */
+    .header-logo{height:36px;}
+    .btn-instagram{display:none;}
+
+    /* Trust strip */
+    .trust-strip{gap:12px;}
+    .trust-pill{flex:1 1 calc(50% - 8px);}
+
+    /* Process */
+    .process-steps{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+
+    /* Services */
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .filter-tabs{justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:4px; scrollbar-width:none;}
+    .filter-tabs::-webkit-scrollbar{display:none;}
+    .filter-tab{flex-shrink:0;}
+
+    /* Gallery */
     .gallery-grid{
-      display:flex; grid-template-columns:none; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory;
+      display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory;
       padding-bottom:4px; margin:0 -20px; padding-left:20px; padding-right:20px; scrollbar-width:none;
     }
     .gallery-grid::-webkit-scrollbar{display:none;}
     .gallery-grid > div{flex:0 0 78vw; scroll-snap-align:center;}
+
+    /* Reviews */
+    .reviews-header{flex-direction:column;}
+    .reviews-rating-summary{flex-direction:row; width:auto;}
+    .testi-card{flex:0 0 min(300px,80vw);}
+    .reviews-footer{flex-wrap:wrap; gap:14px;}
+
+    /* FAQ */
+    .faq-layout{grid-template-columns:1fr; gap:28px;}
+    .faq-left{position:static;}
+    .faq-left h2{font-size:32px;}
+    .faq-q{font-size:0.95rem; padding:18px 0;}
+    .faq-a p{font-size:15px; padding-left:48px;}
+
+    /* Calc */
+    .calc-head h2{font-size:32px;}
+
+    /* Section headings */
+    .section-head h2{font-size:32px;}
+
+    /* Proof section */
+    .proof{flex-direction:column;}
+    .proof-left{width:100%;}
+    .proof-stats{gap:20px;}
+
+    /* Footer */
+    .footer-inner{flex-direction:column; gap:16px;}
+    .footer-links{gap:16px; font-size:0.82rem;}
   }
+
+  /* ============================================================
+     RESPONSIVE — 540px (small mobile)
+     ============================================================ */
   @media (max-width:540px){
-    .services-grid{grid-template-columns:1fr 1fr;}
-    .header-inner{padding:14px 18px;}
+    .header-inner{padding:12px 16px;}
     .btn span.full{display:none;}
-    .trust-pill{ flex: 1 1 100%; }
+
+    /* Hero */
+    .hero h1{font-size:1.85rem;}
+    .hero-ctas .btn{padding:14px 20px; font-size:15px;}
+
+    /* Process */
+    .process-steps{grid-template-columns:1fr; row-gap:32px;}
+    .ps-item{padding:0 8px;}
+
+    /* Services */
+    .services-grid{grid-template-columns:1fr;}
+    .svc-perks{display:none;}
+
+    /* Calculator */
+    .trust-pill{flex:1 1 100%;}
     .calc-row{flex-direction:column; align-items:flex-start; gap:12px;}
     .stepper button{width:44px; height:44px; font-size:1.3rem;}
     .stepper output{min-width:28px; font-size:1.15rem;}
+
+    /* Tabbar */
     .mobile-tabbar a, .mobile-tabbar button{font-size:0.6rem;}
-    .process-steps{grid-template-columns:1fr; row-gap:36px;}
+
+    /* Reviews */
+    .testi-card{flex:0 0 min(280px,88vw);}
+    .testi-quote{font-size:0.92rem;}
+
+    /* FAQ */
+    .faq-icon{width:34px; height:34px;}
+    .faq-q{gap:12px; font-size:0.92rem;}
+    .faq-a p{padding-left:46px; font-size:14px;}
+
+    /* Section headings */
+    .section-head h2, .faq-left h2, .calc-head h2, .process .section-head h2{font-size:28px;}
+
+    /* Gallery tiles */
+    .gallery-grid > div{flex:0 0 88vw;}
+
+    /* Trust strip */
+    .trust-pill{flex:1 1 100%;}
+    .trust-glass .card{padding:18px 20px;}
+
+    /* Location map */
+    .map-frame{min-height:220px;}
+    .map-frame iframe{min-height:220px;}
   }
