@@ -975,8 +975,10 @@
     .faq-q{font-size:0.95rem; padding:18px 0;}
     .faq-a p{font-size:15px; padding-left:48px;}
 
-    /* Calc */
+    /* Calculator */
+    .calc-section{padding:24px 20px; border-radius:20px;}
     .calc-head h2{font-size:32px;}
+    .trust-pill{flex:1 1 100%;}
 
     /* Section headings */
     .section-head h2{font-size:32px;}
