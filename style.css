@@ -1000,9 +1000,6 @@
      RESPONSIVE — 760px (large mobile)
      ============================================================ */
   @media (max-width:760px){
-    body{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
-    .mobile-tabbar{display:block;}
-    .wa-float-wrap{bottom:calc(78px + env(safe-area-inset-bottom));}
     .testi-arrows{display:none;}
     .dots{display:flex;}
     .swipe-hint{display:flex;}
