@@ -980,8 +980,18 @@
     .calc-head h2{font-size:32px;}
     .trust-pill{flex:1 1 100%;}
 
-    /* Section headings */
-    .section-head h2{font-size:32px;}
+    /* Typography — mobile scale */
+    .hero h1{font-size:28px; line-height:1.2;}
+    .section-head h2,
+    .faq-left h2,
+    .calc-head h2,
+    .process .section-head h2,
+    .reviews-section h2,
+    .proof-left h2{font-size:24px; line-height:1.25;}
+    body, p, .section-head p, .hero p.lead,
+    .service-card p, .ps-item p, .why-card p,
+    .testi-quote, .faq-a p, .location-row,
+    .calc-head p{font-size:14px; line-height:1.7;}
 
     /* Proof section */
     .proof{flex-direction:column;}
@@ -1030,8 +1040,12 @@
     .faq-q{gap:12px; font-size:0.92rem;}
     .faq-a p{padding-left:46px; font-size:14px;}
 
-    /* Section headings */
-    .section-head h2, .faq-left h2, .calc-head h2, .process .section-head h2{font-size:28px;}
+    /* Typography — small mobile scale */
+    .hero h1{font-size:28px;}
+    .section-head h2, .faq-left h2, .calc-head h2,
+    .process .section-head h2, .reviews-section h2,
+    .proof-left h2{font-size:24px;}
+    body, p{font-size:14px;}
 
     /* Gallery tiles */
     .gallery-grid > div{flex:0 0 88vw;}
