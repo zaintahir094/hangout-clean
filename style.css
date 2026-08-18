@@ -164,10 +164,88 @@
   .hamburger.open span:nth-child(2){opacity:0;}
   .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
-  .mobile-menu{position:fixed; inset:0; z-index:70; background:rgba(15,42,71,0.97); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; opacity:0; pointer-events:none; transition:opacity .35s ease;}
+  .mobile-menu{
+    position:fixed; inset:0; z-index:70;
+    display:flex; flex-direction:column;
+    opacity:0; pointer-events:none;
+    transition:opacity .3s ease;
+  }
   .mobile-menu.open{opacity:1; pointer-events:auto;}
-  .mobile-menu a{color:#fff; font-family:'Sora',sans-serif; font-size:1.4rem; font-weight:700;}
-  .mobile-menu .btn{margin-top:10px;}
+
+  /* Dark overlay backdrop */
+  .mobile-menu::before{
+    content:''; position:absolute; inset:0;
+    background:rgba(10,20,38,0.6);
+    backdrop-filter:blur(4px);
+  }
+
+  /* The actual menu sheet slides up from bottom */
+  .mobile-menu-sheet{
+    position:absolute; bottom:0; left:0; right:0;
+    background:var(--bg-dark);
+    border-radius:24px 24px 0 0;
+    padding:0 0 env(safe-area-inset-bottom);
+    transform:translateY(100%);
+    transition:transform .35s cubic-bezier(.2,.8,.3,1);
+    z-index:1;
+  }
+  .mobile-menu.open .mobile-menu-sheet{transform:translateY(0);}
+
+  /* Drag handle */
+  .mobile-menu-handle{
+    width:40px; height:4px; border-radius:999px;
+    background:rgba(255,255,255,0.2);
+    margin:12px auto 0;
+  }
+
+  /* Header row inside sheet */
+  .mobile-menu-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px 12px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu-brand{
+    font-family:'Sora',sans-serif; font-weight:800; font-size:1rem; color:#fff;
+  }
+  .mobile-menu-brand span{color:var(--sage);}
+  .mobile-menu-close{
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(255,255,255,0.1); border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.1rem; transition:background .2s ease;
+  }
+  .mobile-menu-close:hover{background:rgba(255,255,255,0.2);}
+
+  /* Nav links in sheet */
+  .mobile-menu-nav{
+    display:flex; flex-direction:column; padding:8px 0;
+  }
+  .mobile-menu-nav a{
+    color:rgba(255,255,255,0.85);
+    font-family:'Work Sans',sans-serif; font-size:16px; font-weight:600;
+    padding:14px 24px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    text-decoration:none;
+    display:flex; align-items:center; justify-content:space-between;
+    transition:color .2s ease, background .2s ease;
+  }
+  .mobile-menu-nav a:last-of-type{border-bottom:none;}
+  .mobile-menu-nav a:hover{color:#fff; background:rgba(255,255,255,0.05);}
+  .mobile-menu-nav a::after{content:'›'; opacity:0.4; font-size:1.2rem;}
+
+  /* CTA button at bottom of sheet */
+  .mobile-menu-cta{
+    padding:16px 24px 20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu-cta .btn{
+    width:100%; justify-content:center;
+    font-size:14px; font-weight:600; padding:14px;
+  }
+
+  /* Hide old mobile-menu direct children styles */
+  .mobile-menu > a{ display:none; }
+  .mobile-menu > .btn{ display:none; }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -975,8 +1053,11 @@
     .faq-q{font-size:0.95rem; padding:18px 0;}
     .faq-a p{font-size:15px; padding-left:48px;}
 
-    /* Calculator */
-    .calc-section{padding:24px 20px; border-radius:20px;}
+    /* Buttons — 14px medium on mobile */
+    .btn, .svc-cta, .filter-tab, .btn-instagram{
+      font-size:14px !important;
+      font-weight:500;
+    }
     .calc-head h2{font-size:32px;}
     .trust-pill{flex:1 1 100%;}
 

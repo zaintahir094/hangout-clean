@@ -64,7 +64,26 @@ document.querySelectorAll('.compare').forEach(initCompare);
 
   btn.addEventListener('click', toggle);
 
-  // close when any link inside the menu is clicked
+  // close button inside menu
+  const closeBtn = document.getElementById('mobileMenuClose');
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+
+  // close when clicking the backdrop (outside the sheet)
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // close when any nav link is clicked
   menu.querySelectorAll('a').forEach((a) =>
     a.addEventListener('click', () => {
       menu.classList.remove('open');
