@@ -1043,9 +1043,9 @@
       width:100%;
     }
     .map-frame iframe{min-height:220px; width:100%;}
-    #contact .wrap{padding:0;}
+    #contact .wrap{padding:0 16px;}
     #contact .section-head,
-    #contact .location-grid{padding:0 16px;}
+    #contact .location-grid{padding:0;}
     .location-grid{grid-template-columns:1fr; gap:16px;}
     .location-card{border-radius:12px;}
   }
