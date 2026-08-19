@@ -99,8 +99,8 @@ document.querySelectorAll('.compare').forEach(initCompare);
    4. PRICE CALCULATOR
    ---------------------------------------------------------- */
 (function () {
-  const PRICES = { seats: 800, carpets: 2500, mattresses: 1800, pet: 800 };
-  const state  = { seats: 0, carpets: 0, mattresses: 0 };
+  const PRICES = { seats: 600, carpets: 30, mattresses: 3000, curtains: 300, pet: 800 };
+  const state  = { seats: 0, carpets: 0, mattresses: 0, curtains: 0 };
 
   const totalEl   = document.getElementById('calcTotal');
   const summaryEl = document.getElementById('calcSummary');
@@ -118,6 +118,7 @@ document.querySelectorAll('.compare').forEach(initCompare);
       state.seats     * PRICES.seats +
       state.carpets   * PRICES.carpets +
       state.mattresses * PRICES.mattresses +
+      state.curtains  * PRICES.curtains +
       pet;
     const hi = Math.round(base * 1.15); // ±15 % upper estimate
 
@@ -135,6 +136,7 @@ document.querySelectorAll('.compare').forEach(initCompare);
     if (state.seats)     parts.push(state.seats + ' sofa seat' + (state.seats > 1 ? 's' : ''));
     if (state.carpets)   parts.push(state.carpets + ' carpet' + (state.carpets > 1 ? 's' : ''));
     if (state.mattresses) parts.push(state.mattresses + ' mattress' + (state.mattresses > 1 ? 'es' : ''));
+    if (state.curtains)  parts.push(state.curtains + ' curtain panel' + (state.curtains > 1 ? 's' : ''));
     if (pet)             parts.push('pet treatment');
     summaryEl.textContent = parts.join(', ');
 
