@@ -651,21 +651,7 @@
     overflow:hidden;
   }
 
-  /* Filter tabs */
-  .wg-tabs{
-    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-    justify-content:center; margin-bottom:40px;
-  }
-  .wg-tab{
-    padding:9px 22px; border-radius:999px;
-    border:1.5px solid var(--line); background:#fff;
-    font-size:14px; font-weight:600; color:var(--ink-soft);
-    cursor:pointer; transition:all .25s ease; text-decoration:none;
-    white-space:nowrap;
-  }
-  .wg-tab:hover{ border-color:var(--sage); color:var(--sage); }
-  .wg-tab.active{ background:var(--bg-dark); border-color:var(--bg-dark); color:#fff; }
-  .wg-more{ background:transparent; }
+  /* Filter tabs removed */
 
   /* Stage — the 3D carousel */
   .wg-stage{
