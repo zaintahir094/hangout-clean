@@ -314,3 +314,88 @@ document.querySelectorAll('.magnetic').forEach((el) => {
     header.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
 })();
+
+
+/* ----------------------------------------------------------
+   13. PREMIUM WORK GALLERY — 3D carousel
+   ---------------------------------------------------------- */
+(function () {
+  const track   = document.getElementById('wgTrack');
+  const prevBtn = document.getElementById('wgPrev');
+  const nextBtn = document.getElementById('wgNext');
+  const dotsWrap= document.getElementById('wgDots');
+  const tabs    = document.querySelectorAll('.wg-tab[data-wg]');
+  if (!track) return;
+
+  let allCards = Array.from(track.querySelectorAll('.wg-card'));
+  let visible  = [...allCards];
+  let current  = 0;
+
+  // positions: center, left1, right1, left2, right2, hidden
+  const POS = ['left2','left1','center','right1','right2'];
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    visible.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'wg-dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  function render() {
+    // reset all
+    allCards.forEach(c => { c.dataset.pos = 'hidden'; });
+
+    // assign positions around current
+    const offsets = [-2, -1, 0, 1, 2];
+    offsets.forEach((offset, idx) => {
+      const idx2 = ((current + offset) % visible.length + visible.length) % visible.length;
+      visible[idx2].dataset.pos = POS[idx];
+    });
+
+    // update dots
+    dotsWrap.querySelectorAll('.wg-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(idx) {
+    current = ((idx) % visible.length + visible.length) % visible.length;
+    render();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // click side cards to navigate
+  track.addEventListener('click', (e) => {
+    const card = e.target.closest('.wg-card');
+    if (!card) return;
+    const pos = card.dataset.pos;
+    if (pos === 'left1' || pos === 'left2') goTo(current - 1);
+    if (pos === 'right1' || pos === 'right2') goTo(current + 1);
+  });
+
+  // Filter tabs
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.wg;
+      visible = filter === 'all'
+        ? [...allCards]
+        : allCards.filter(c => c.dataset.wg === filter);
+      current = 0;
+      buildDots();
+      render();
+    });
+  });
+
+  // Auto-advance every 4s
+  setInterval(() => goTo(current + 1), 4000);
+
+  buildDots();
+  render();
+})();
