@@ -208,7 +208,7 @@ document.querySelectorAll('.faq-item').forEach((item) => {
 
 
 /* ----------------------------------------------------------
-   7. TESTIMONIAL CAROUSEL
+   7. TESTIMONIAL CAROUSEL — 3-card slide
    ---------------------------------------------------------- */
 (function () {
   const track = document.getElementById('testiTrack');
@@ -218,24 +218,28 @@ document.querySelectorAll('.faq-item').forEach((item) => {
   if (!track) return;
 
   const cards = track.querySelectorAll('.testi-card');
+  const total = cards.length;
   let current = 0;
 
-  function scrollTo(idx) {
-    current = Math.max(0, Math.min(cards.length - 1, idx));
-    cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  function getVisible() {
+    return window.innerWidth <= 760 ? 1 : 3;
+  }
+
+  function update() {
+    const visible = getVisible();
+    const maxIdx  = total - visible;
+    if (current > maxIdx) current = maxIdx;
+    const pct = (100 / visible) * current;
+    track.style.transform = `translateX(-${pct}%)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
-  if (prev) prev.addEventListener('click', () => scrollTo(current - 1));
-  if (next) next.addEventListener('click', () => scrollTo(current + 1));
+  if (prev) prev.addEventListener('click', () => { current = Math.max(0, current - 1); update(); });
+  if (next) next.addEventListener('click', () => { current = Math.min(total - getVisible(), current + 1); update(); });
 
-  // sync dots on manual scroll
-  track.addEventListener('scroll', () => {
-    const cardW = cards[0] ? cards[0].offsetWidth + 20 : 1; // 20 = gap
-    const idx   = Math.round(track.scrollLeft / cardW);
-    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-    current = idx;
-  }, { passive: true });
+  dots.forEach((d, i) => d.addEventListener('click', () => { current = i; update(); }));
+  window.addEventListener('resize', update);
+  update();
 })();
 
 

@@ -681,7 +681,7 @@
 <section id="reviews" class="reviews-section">
   <div class="wrap">
 
-    <!-- Header row -->
+    <!-- Header -->
     <div class="reviews-header reveal">
       <div>
         <div class="eyebrow"><span class="dot"></span> What Multan says</div>
@@ -697,81 +697,79 @@
       </div>
     </div>
 
-    <!-- Cards grid -->
-    <div class="testi-track reveal" id="testiTrack">
+    <!-- Carousel with side arrows -->
+    <div class="reviews-carousel reveal">
 
-      <div class="testi-card">
-        <div class="testi-quote-mark">"</div>
-        <p class="testi-quote">They came the same evening I messaged. The sofa hasn't smelled this fresh since we bought it.</p>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-foot">
-          <div class="testi-person">
-            <div class="testi-avatar">AS</div>
-            <div><strong>Ayesha S.</strong><span>Cantt, Multan</span></div>
+      <button class="rc-arrow rc-prev" id="testiPrev" aria-label="Previous review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="rc-viewport">
+        <div class="testi-track" id="testiTrack">
+
+          <div class="testi-card">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-quote">They came the same evening I messaged. The sofa hasn't smelled this fresh since we bought it.</p>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-foot">
+              <div class="testi-person">
+                <div class="testi-avatar">AS</div>
+                <div><strong>Ayesha S.</strong><span>Cantt, Multan</span></div>
+              </div>
+              <span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg> Google</span>
+            </div>
           </div>
-          <span class="verified-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg>
-            Google
-          </span>
+
+          <div class="testi-card">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-quote">Honestly didn't expect the carpet to come out this light again. Worth every rupee.</p>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-foot">
+              <div class="testi-person">
+                <div class="testi-avatar">HR</div>
+                <div><strong>Hamza R.</strong><span>Gulgasht, Multan</span></div>
+              </div>
+              <span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg> Google</span>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-quote">Told us the exact price on WhatsApp before showing up. No surprises when the team left.</p>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-foot">
+              <div class="testi-person">
+                <div class="testi-avatar">FM</div>
+                <div><strong>Fatima M.</strong><span>Shah Rukn-e-Alam, Multan</span></div>
+              </div>
+              <span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg> Google</span>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-quote">Pet odour on the rug had been there for months. Gone after one visit.</p>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-foot">
+              <div class="testi-person">
+                <div class="testi-avatar">UK</div>
+                <div><strong>Usman K.</strong><span>Bosan Road, Multan</span></div>
+              </div>
+              <span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg> Google</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="testi-card testi-card--featured">
-        <div class="testi-quote-mark">"</div>
-        <p class="testi-quote">Honestly didn't expect the carpet to come out this light again. Worth every rupee.</p>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-foot">
-          <div class="testi-person">
-            <div class="testi-avatar">HR</div>
-            <div><strong>Hamza R.</strong><span>Gulgasht, Multan</span></div>
-          </div>
-          <span class="verified-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg>
-            Google
-          </span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-quote-mark">"</div>
-        <p class="testi-quote">Told us the exact price on WhatsApp before showing up. No surprises when the team left.</p>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-foot">
-          <div class="testi-person">
-            <div class="testi-avatar">FM</div>
-            <div><strong>Fatima M.</strong><span>Shah Rukn-e-Alam, Multan</span></div>
-          </div>
-          <span class="verified-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg>
-            Google
-          </span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-quote-mark">"</div>
-        <p class="testi-quote">Pet odour on the rug had been there for months. Gone after one visit.</p>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-foot">
-          <div class="testi-person">
-            <div class="testi-avatar">UK</div>
-            <div><strong>Usman K.</strong><span>Bosan Road, Multan</span></div>
-          </div>
-          <span class="verified-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12l7 7 11-13"/></svg>
-            Google
-          </span>
-        </div>
-      </div>
+      <button class="rc-arrow rc-next" id="testiNext" aria-label="Next review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
 
     </div>
 
-    <!-- Nav dots + arrows -->
+    <!-- Dots -->
     <div class="reviews-footer reveal">
-      <div class="testi-arrows">
-        <button type="button" id="testiPrev" aria-label="Previous review">←</button>
-        <button type="button" id="testiNext" aria-label="Next review">→</button>
-      </div>
       <div class="dots" id="testiDots">
         <span class="dot-item active"></span><span class="dot-item"></span><span class="dot-item"></span><span class="dot-item"></span>
       </div>
