@@ -1023,26 +1023,29 @@
   .footer-bottom{padding-top:20px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:rgba(245,249,252,0.4);}
 
   /* ---------- Floating WhatsApp button ---------- */
-  .wa-float-wrap{position:fixed; right:22px; bottom:22px; z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:10px;}
+  .wa-float-wrap{position:fixed; right:22px; bottom:22px; z-index:60; display:flex; flex-direction:column; align-items:center; gap:12px;}
   .wa-status{ display:none !important; }
   .mobile-tabbar{ display:none !important; }
+
   .float-call{
-    position:relative; background:var(--sage); color:#fff;
-    width:52px; height:52px; border-radius:50%;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--sage); color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 28px rgba(62,143,166,0.45), 0 4px 12px rgba(0,0,0,0.2);
-    transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;
-    overflow:visible; text-decoration:none;
+    box-shadow:0 8px 28px rgba(62,143,166,0.4), 0 4px 12px rgba(0,0,0,0.2);
+    transition:transform .3s ease, box-shadow .3s ease;
+    text-decoration:none; position:relative; overflow:visible;
   }
-  .float-call:hover{transform:scale(1.1) translateY(-3px); box-shadow:0 14px 36px rgba(62,143,166,0.55);}
-    position:relative; background:#25D366; color:#fff;
-    width:60px; height:60px; border-radius:50%;
+  .float-call:hover{transform:scale(1.1) translateY(-3px);}
+
+  .float-wa{
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 32px rgba(37,211,102,0.45), 0 4px 12px rgba(0,0,0,0.2);
-    transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;
-    overflow:visible;
+    box-shadow:0 8px 28px rgba(37,211,102,0.4), 0 4px 12px rgba(0,0,0,0.2);
+    transition:transform .3s ease, box-shadow .3s ease;
+    text-decoration:none; position:relative; overflow:visible;
   }
-  .float-wa:hover{transform:scale(1.1) translateY(-3px); box-shadow:0 14px 40px rgba(37,211,102,0.55), 0 4px 16px rgba(0,0,0,0.25);}
+  .float-wa:hover{transform:scale(1.1) translateY(-3px);}
   .float-wa::before{
     content:''; position:absolute; inset:-8px; border-radius:50%;
     border:2px solid rgba(37,211,102,0.45);
